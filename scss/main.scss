@@ -44,7 +44,7 @@ body {
   &:nth-last-of-type(2) {
     margin-left: 18px;
   }
-  &:not(.occupied):not(.selected):hover {
+  &:not(.occupied):hover {
     background: green;
     cursor: pointer;
     transform: scale(1.2);
