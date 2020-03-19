@@ -35,10 +35,10 @@ body {
     margin-right: 18px; }
   .seat:nth-last-of-type(2) {
     margin-left: 18px; }
-  .seat:not(.occupied):hover {
+  .seat:not(.occupied):not(.selected):hover {
     background: green;
     cursor: pointer;
-    height: 1.05rem; }
+    transform: scale(1.2); }
 
 .row {
   display: flex;
@@ -51,12 +51,37 @@ body {
   background: #fff; }
 
 .showcase {
-  background: purple;
-  margin: 10px; }
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
   .showcase ul {
     display: flex;
-    text-align: center;
-    padding: 10px; }
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; }
+    .showcase ul small {
+      margin-left: 2px; }
+
+.container {
+  perspective: 100px;
+  margin-bottom: 30px; }
+  .container .screen {
+    background: white;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7); }
+
+p.text {
+  margin: 5px 0; }
+  p.text span {
+    color: #6feaf6; }
 
 /* Lessons:
 > Use 'Flexbox' to easily center the content on the page in 'body' tag.
