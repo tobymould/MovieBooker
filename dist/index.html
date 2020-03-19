@@ -8,110 +8,115 @@
   </head>
 
   <body>
-    <div class="container">
-      <div id="movies">
-        <label for="dropdown">Pick a Film:</label>
-        <select id="dropdown">
-          <option>1917 (£7)</option>
-          <option>Avengers: Endgame (£9)</option>
-        </select>
-      </div>
-      <div id="legend">
-        <ul>
-          <li>N/A</li>
-          <li>Selected</li>
-          <li>Occupied</li>
-        </ul>
-      </div>
-      <img src="images/screen" alt="Theater Screen" />
-      <div id="seats">
-        <div id="row1">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row2">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row3">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row4">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row5">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row6">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row7">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-        <div id="row8">
-          <input type="radio" id="seat1" name="seat" value="seats" />
-          <input type="radio" id="seat2" name="seat" value="seats" />
-          <input type="radio" id="seat3" name="seat" value="seats" />
-          <input type="radio" id="seat4" name="seat" value="seats" />
-          <input type="radio" id="seat5" name="seat" value="seats" />
-          <input type="radio" id="seat6" name="seat" value="seats" />
-          <input type="radio" id="seat7" name="seat" value="seats" />
-          <input type="radio" id="seat8" name="seat" value="seats" />
-        </div>
-      </div>
-      <p>
-        You have selected <span id="number"></span> seats for a price of £<span
-          id="sum"
-        ></span>
-      </p>
+    <div class="movie-container">
+      <label for="movie">Pick a Film:</label>
+      <select id="movie">
+        <option value="7">1917 (£7)</option>
+        <option value="9">Avengers: Endgame (£9)</option>
+        <option value="5">Indiana Jones (£5)</option>
+        <option value="15">StarWars (£15)</option>
+      </select>
     </div>
+    <div class="showcase">
+      <ul>
+        <div class="seat"></div>
+        <small>N/A</small>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="screen"></div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+    <p class="text">
+      You have selected <span id="count">0</span> seats for a price of £<span
+        id="total"
+        >0</span
+      >
+    </p>
+    <!-- </div> -->
 
     <!-- JAVASCRIPT script -->
     <script src="app.js"></script>

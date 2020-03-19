@@ -1,2 +1,79 @@
-h1 {
-  color: red; }
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background-color: #242333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "lato"; }
+
+.movie-container {
+  margin: 20px 0; }
+  .movie-container select {
+    background: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px; }
+
+.seat {
+  background: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  .seat:nth-of-type(2) {
+    margin-right: 18px; }
+  .seat:nth-last-of-type(2) {
+    margin-left: 18px; }
+  .seat:not(.occupied):hover {
+    background: green;
+    cursor: pointer;
+    height: 1.05rem; }
+
+.row {
+  display: flex;
+  flex-direction: row; }
+
+.selected {
+  background: #6feaf6; }
+
+.occupied {
+  background: #fff; }
+
+.showcase {
+  background: purple;
+  margin: 10px; }
+  .showcase ul {
+    display: flex;
+    text-align: center;
+    padding: 10px; }
+
+/* Lessons:
+> Use 'Flexbox' to easily center the content on the page in 'body' tag.
+    a. "flex-direction: column" - If you want all the content children inside the 'flexbox' parent to DISPLAY ON NEW LINES VERTICALLY (instead of horizontally), change direction.
+
+> Main things used for flex-box:
+    a. "display: flex;"            - auto-formats children elements to flexbox directed HORIZONTALLY.
+    b. "align-items: center;"     - horizontally aligns children to center(height must be specified to work).
+    c. "justify-content: center;" - vertically justifies children to center (height must be specified to work).
+    d. "height: 100vh;"            - Required for the 'align-items'/'justify-content' to work.
+    e. "flex-direction: column;"  - automatically horizontal, so have to specify vertical to align children vertically instead of line a navbar horizontally.
+  
+> pseudo-selectors:
+    a. nth-child(#)        - used when you are writing this in the css of the PARENT to apply this to nth one of the REPEATED CHILDREN. 
+    b. nth-of-type(#)      - used when writing on the actual repeat element and wanna select one of the REPEATED SIBLINGS, (start-to-end).
+    c. nth-last-of-type(#) - same as (b) BUT starts in reverse direction (end-to-start).
+
+> :not(.occupied):hover - Makes sure that, as long as its does NOT have this class name, it will run the hover effect!
+
+    */
