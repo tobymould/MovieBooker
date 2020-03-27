@@ -9,26 +9,33 @@
 
   <body>
     <div class="movie-container">
-      <label for="movie">Pick a Film:</label>
+      <label>Pick a Film:</label>
       <select id="movie">
-        <option value="7">1917 (£7)</option>
-        <option value="9">Avengers: Endgame (£9)</option>
-        <option value="5">Indiana Jones (£5)</option>
-        <option value="15">StarWars (£15)</option>
+        <option value="10">1917 (£10)</option>
+        <option value="12">Avengers: Endgame (£12)</option>
+        <option value="8">Indiana Jones (£8)</option>
+        <option value="9">StarWars (£9)</option>
       </select>
     </div>
-    <div class="showcase">
-      <ul id="select-list">
+
+    <ul class="showcase">
+      <li>
         <div class="seat"></div>
         <small>N/A</small>
+      </li>
+      <li>
         <div class="seat selected"></div>
         <small>Selected</small>
+      </li>
+      <li>
         <div class="seat occupied"></div>
         <small>Occupied</small>
-      </ul>
-    </div>
+      </li>
+    </ul>
+
     <div class="container">
       <div class="screen"></div>
+
       <div class="row">
         <div class="seat"></div>
         <div class="seat"></div>
@@ -89,7 +96,7 @@
         <div class="seat"></div>
         <div class="seat"></div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="seat"></div>
         <div class="seat"></div>
         <div class="seat occupied"></div>
@@ -108,8 +115,9 @@
         <div class="seat"></div>
         <div class="seat occupied"></div>
         <div class="seat"></div>
-      </div>
+      </div> -->
     </div>
+
     <p class="text">
       You have selected <span id="count">0</span> seats for a price of £<span
         id="total"

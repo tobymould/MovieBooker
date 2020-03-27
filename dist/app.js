@@ -11,7 +11,11 @@ let ticketPrice = +movieSelect.value; //'+' turns string datatype into integer.
 // 3. Support Functions:
 // updates total and count
 function updateSelectedCount() {
-  const selectedSeats = document.querySelectorAll(".row .seats.selected");
+  const selectedSeats = document.querySelectorAll(".row .seat.selected");
+
+  // using the Spread Operator (...) 1) Copy selected seats into arr, 2) Map through array, & 3) Return a new array of indexes.
+  const seatsIndex = [...]
+  
   const selectedSeatsCount = selectedSeats.length;
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
@@ -33,12 +37,12 @@ container.addEventListener("click", e => {
 
     updateSelectedCount();
   }
+  //accesses the target classlist if it contains 'seat' and NOT contain 'occupied'.
+  //...toggle the classlist of the target element to include 'selected' temporarily while selected.
 });
 
 // Initial count and total set
-updateSelectedCount();
-//accesses the target classlist if it contains 'seat' and NOT contain 'occupied'.
-//...toggle the classlist of the target element to include 'selected' temporarily while selected.
+// updateSelectedCount();
 
 //
 //

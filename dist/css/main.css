@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px; }
+  margin: 0px; }
 
 body {
   background-color: #242333;
@@ -24,31 +23,36 @@ body {
     margin-left: 10px;
     padding: 5px 15px 5px 15px; }
 
-.seat {
-  background: #444451;
-  height: 12px;
-  width: 15px;
-  margin: 3px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px; }
-  .seat:nth-of-type(2) {
-    margin-right: 18px; }
-  .seat:nth-last-of-type(2) {
-    margin-left: 18px; }
-  .seat:not(.occupied):not(.selected):hover {
-    background: green;
-    cursor: pointer;
-    transform: scale(1.2); }
-
-.row {
-  display: flex;
-  flex-direction: row; }
-
-.selected {
-  background: #6feaf6; }
-
-.occupied {
-  background: #fff; }
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px; }
+  .container .screen {
+    background: white;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7); }
+  .container .row {
+    display: flex; }
+    .container .row .seat {
+      background: #444451;
+      height: 12px;
+      width: 15px;
+      margin: 3px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
+      .container .row .seat.selected {
+        background: #6feaf6; }
+      .container .row .seat.occupied {
+        background: #fff; }
+      .container .row .seat:nth-of-type(2) {
+        margin-right: 18px; }
+      .container .row .seat:nth-last-of-type(2) {
+        margin-left: 18px; }
+      .container .row .seat:not(.occupied):hover {
+        cursor: pointer;
+        transform: scale(1.2); }
 
 .showcase {
   background: rgba(0, 0, 0, 0.1);
@@ -57,26 +61,17 @@ body {
   color: #777;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
   justify-content: space-between; }
-  .showcase ul {
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1); }
+  .showcase li {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 10px; }
-    .showcase ul small {
+    .showcase li small {
       margin-left: 2px; }
-
-.container {
-  perspective: 100px;
-  margin-bottom: 30px; }
-  .container .screen {
-    background: white;
-    height: 70px;
-    width: 100%;
-    margin: 15px 0;
-    transform: rotateX(-45);
-    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7); }
 
 p.text {
   margin: 5px 0; }
