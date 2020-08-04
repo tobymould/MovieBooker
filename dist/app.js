@@ -5,26 +5,54 @@ const count = document.getElementById("count");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
 
+PopulateUI();
+
 //2. Values
 let ticketPrice = +movieSelect.value; //'+' turns string datatype into integer.
+
+// SAVE SELECTED MOVIE - index and price:
+function setMovieData(movieIndex, moviePrice) {
+  localStorage.setItem("selectedMovieIndex", movieIndex);
+  localStorage.setItem("selectedMoviePrice", moviePrice);
+}
 
 // 3. Support Functions:
 // updates total and count
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");
 
-  // using the Spread Operator (...) 1) Copy selected seats into arr, 2) Map through array, & 3) Return a new array of indexes.
-  const seatsIndex = [...]
-  
+  // SAVE THE SELECTED SEATS - using the Spread Operator (...) 1) Copy selected seats into arr, 2) Map through array, & 3) Return a new array of indexes.
+  const seatsIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat));
+  localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+
   const selectedSeatsCount = selectedSeats.length;
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
+}
+
+// Get data from localstorage and Populate UI
+function populateUI() {
+  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (selectedSeats.indexOf(index) > -1) {
+        seat.classList.add("selected");
+      }
+    });
+  }
+
+  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+  if (selectedMovieIndex !== null) {
+    movieSelect.selectedIndex = selectedMovieIndex;
+  }
 }
 
 // 4. Event Listener:
 // Movie Select Event:
 movieSelect.addEventListener("change", e => {
   ticketPrice = +e.target.value;
+
   updateSelectedCount();
 });
 // Seat Click Event:
@@ -42,7 +70,7 @@ container.addEventListener("click", e => {
 });
 
 // Initial count and total set
-// updateSelectedCount();
+updateSelectedCount();
 
 //
 //
